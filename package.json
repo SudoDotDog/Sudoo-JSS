@@ -1,0 +1,35 @@
+{
+  "name": "@sudoo/jss",
+  "version": "1.0.0",
+  "description": ":beginner: JSS registration wrap",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SudoDotDog/BWNL-Horizon-React.git"
+  },
+  "author": "WMXPY",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SudoDotDog/BWNL-Horizon-React/issues"
+  },
+  "homepage": "https://github.com/SudoDotDog/BWNL-Horizon-React#readme",
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "dependencies": {
+    "jss": "^10.0.0-alpha.23",
+    "jss-preset-default": "^10.0.0-alpha.23"
+  },
+  "devDependencies": {
+    "@sudoo/io": "^1.6.1",
+    "@sudoo/mock": "^1.2.0",
+    "@sudoo/react-force": "^1.5.0",
+    "@sudoo/react-force-dev": "^1.5.0",
+    "@sudoo/triforce": "^1.6.0",
+    "@types/jss": "^9.5.8"
+  }
+}
