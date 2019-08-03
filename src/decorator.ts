@@ -4,10 +4,9 @@
  * @description Decorator
  */
 
-import { Style } from "jss/css";
 import { CSSProperties } from "react";
 
-export type JSSStyle = Record<string, Style | {
+export type JSSStyle = Record<string, CSSProperties | {
     [key: string]: any;
 }>;
 
