@@ -29,9 +29,10 @@ export class StyleManager {
         this._prefix = prefix || '';
     }
 
-    public setPrefix(prefix: string) {
+    public setPrefix(prefix: string): this {
 
         this._prefix = prefix;
+        return this;
     }
 
     public use(): Classes {
