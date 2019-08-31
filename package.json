@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SudoDotDog/BWNL-Horizon-React.git"
+    "url": "git+https://github.com/SudoDotDog/Sudoo-JSS.git"
   },
   "author": "WMXPY",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SudoDotDog/BWNL-Horizon-React/issues"
+    "url": "https://github.com/SudoDotDog/Sudoo-JSS/issues"
   },
-  "homepage": "https://github.com/SudoDotDog/BWNL-Horizon-React#readme",
+  "homepage": "https://github.com/SudoDotDog/Sudoo-JSS#readme",
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
