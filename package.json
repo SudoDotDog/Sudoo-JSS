@@ -27,9 +27,9 @@
   "devDependencies": {
     "@sudoo/io": "^1.6.1",
     "@sudoo/mock": "^1.2.0",
-    "@sudoo/react-force": "^1.6.0",
-    "@sudoo/react-force-dev": "^1.6.0",
-    "@sudoo/triforce": "^1.8.3",
+    "@sudoo/react-force": "^1.6.1",
+    "@sudoo/react-force-dev": "^1.6.1",
+    "@sudoo/triforce": "^2.0.3",
     "@types/jss": "^10.0.0"
   }
 }
