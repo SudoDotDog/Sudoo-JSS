@@ -6,10 +6,6 @@
 
 import { CSSProperties } from "react";
 
-export type JSSStyle = Record<string, CSSProperties | {
-    [key: string]: any;
-}>;
-
 export const mergeClasses = (...classes: Array<string | null | undefined>): string | undefined => {
 
     const clazz: string = classes.filter((name: string | null | undefined) => Boolean(name)).join(' ');

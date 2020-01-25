@@ -4,23 +4,22 @@
  * @description Style
  */
 
-import jss, { Classes, StyleSheet } from "jss";
-import { JSSStyle } from "./decorator";
+import jss, { Classes, Styles, StyleSheet } from "jss";
 
 export class StyleManager {
 
-    public static create(base: JSSStyle, meta: string, prefix?: string) {
+    public static create(base: Styles, meta: string, prefix?: string) {
 
         return new StyleManager(base, meta, prefix);
     }
 
-    private readonly _base: JSSStyle;
+    private readonly _base: Styles;
     private readonly _meta: string;
 
     private _prefix: string;
-    private _sheet: StyleSheet | null;
+    private _sheet: StyleSheet<string | number | symbol> | null;
 
-    private constructor(base: JSSStyle, meta: string, prefix?: string) {
+    private constructor(base: Styles, meta: string, prefix?: string) {
 
         this._base = base;
         this._meta = meta;
@@ -52,7 +51,7 @@ export class StyleManager {
         return this._getAttached();
     }
 
-    private _getAttached(): StyleSheet {
+    private _getAttached(): StyleSheet<string | number | symbol> {
 
         if (this._sheet) {
             return this._sheet;
@@ -61,6 +60,7 @@ export class StyleManager {
         this._sheet = jss.createStyleSheet(this._base, {
             meta: `${this._prefix}${this._meta}`,
         }).attach();
-        return this._sheet;
+
+        return this._sheet as StyleSheet<string | number | symbol>;
     }
 }
