@@ -19,6 +19,8 @@ export class StyleManager {
     private _prefix: string;
     private _sheet: StyleSheet<string | number | symbol> | null;
 
+    private _onAttach?: () => void;
+
     private constructor(base: Styles, meta: string, prefix?: string) {
 
         this._base = base;
@@ -31,6 +33,12 @@ export class StyleManager {
     public setPrefix(prefix: string): this {
 
         this._prefix = prefix;
+        return this;
+    }
+
+    public setOnAttach(onAttach: () => void): this {
+
+        this._onAttach = onAttach;
         return this;
     }
 
@@ -55,6 +63,10 @@ export class StyleManager {
 
         if (this._sheet) {
             return this._sheet;
+        }
+
+        if (this._onAttach) {
+            this._onAttach();
         }
 
         this._sheet = jss.createStyleSheet(this._base, {
