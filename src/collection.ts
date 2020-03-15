@@ -55,6 +55,6 @@ export class StyleCollection {
     public renderStyleTagSting(id: string): string {
 
         const content: string = this.renderSting();
-        return `<style>${content}</style>`;
+        return `<style id="${id}">${content}</style>`;
     }
 }
