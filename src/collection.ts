@@ -4,7 +4,7 @@
  * @description Collection
  */
 
-import { Styles } from "jss";
+import { SheetsRegistry, Styles } from "jss";
 import { StyleManager } from "./style";
 
 export class StyleCollection {
@@ -15,16 +15,30 @@ export class StyleCollection {
     }
 
     private readonly _prefix: string;
-    private readonly _managers: StyleManager[];
+    private readonly _managers: Map<string, StyleManager>;
 
     private constructor(prefix: string) {
 
         this._prefix = prefix;
-        this._managers = [];
+        this._managers = new Map();
     }
 
-    public hydrate(base: Styles, meta: string) {
+    public hydrate(meta: string, base: Styles): StyleManager {
 
+        const manager: StyleManager = StyleManager.create(base, meta, this._prefix);
+        this._managers.set(meta, manager);
 
+        return manager;
+    }
+
+    public renderSting(): string {
+
+        const reg: SheetsRegistry = new SheetsRegistry();
+        for (const key of this._managers.keys()) {
+            const manager: StyleManager = this._managers.get(key) as StyleManager;
+            reg.add(manager.sheet());
+        }
+
+        return reg.toString();
     }
 }
