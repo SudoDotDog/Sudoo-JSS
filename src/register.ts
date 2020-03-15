@@ -23,6 +23,8 @@ export class Register {
         jss.setup(jssPresetDefault());
         this._instance = new Register(options);
 
+        this._instance.removeServerSideStyles();
+
         return;
     }
 

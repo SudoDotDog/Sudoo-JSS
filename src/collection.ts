@@ -15,8 +15,9 @@ export class StyleCollection {
     }
 
     private readonly _prefix: string;
-    private readonly _attached: string[];
     private readonly _managers: Map<string, StyleManager>;
+
+    private _attached: string[];
 
     private constructor(prefix: string) {
 
@@ -56,5 +57,11 @@ export class StyleCollection {
 
         const content: string = this.renderSting();
         return `<style id="${id}">${content}</style>`;
+    }
+
+    public resetAttachment(): this {
+
+        this._attached = [];
+        return this;
     }
 }

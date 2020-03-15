@@ -45,6 +45,10 @@ export class StyleManager {
     public use(): Classes {
 
         const sheet: StyleSheet = this._getAttached();
+        if (this._onAttach) {
+            this._onAttach();
+        }
+
         return sheet.classes;
     }
 
@@ -63,10 +67,6 @@ export class StyleManager {
 
         if (this._sheet) {
             return this._sheet;
-        }
-
-        if (this._onAttach) {
-            this._onAttach();
         }
 
         this._sheet = jss.createStyleSheet(this._base, {
