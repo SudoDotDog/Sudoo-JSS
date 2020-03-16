@@ -14,17 +14,23 @@ export type RegisterOptions = {
 
 export class Register {
 
-    public static register(options: RegisterOptions = {}): void {
+    public static register(options: RegisterOptions = {}): Register {
 
         if (this._instance) {
-            return;
+            return this._instance;
         }
 
         jss.setup(jssPresetDefault());
-        this._instance = new Register(options);
 
+        this._instance = new Register(options);
         this._instance.removeServerSideStyles();
 
+        return this._instance;
+    }
+
+    public static setup(): void {
+
+        jss.setup(jssPresetDefault());
         return;
     }
 
