@@ -59,6 +59,14 @@ export class StyleCollection {
         return `<style id="${id}">${content}</style>`;
     }
 
+    public flushStyleTagSting(id: string): string {
+
+        const content: string = this.renderSting();
+        this.resetAttachment();
+
+        return `<style id="${id}">${content}</style>`;
+    }
+
     public resetAttachment(): this {
 
         this._attached = [];

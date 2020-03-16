@@ -1,6 +1,6 @@
 {
   "name": "@sudoo/jss",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": ":beginner: JSS registration wrap",
   "main": "index.js",
   "directories": {
