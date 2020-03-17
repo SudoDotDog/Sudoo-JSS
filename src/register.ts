@@ -49,7 +49,7 @@ export class Register {
     private _setupDone: boolean;
     private _initialDone: boolean;
 
-    private _options: RegisterOptions;
+    private _options: RegisterOptions = {};
 
     private constructor() {
 
