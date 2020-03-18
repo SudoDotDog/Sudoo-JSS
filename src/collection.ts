@@ -11,8 +11,18 @@ export class StyleCollection {
 
     public static create(prefix: string): StyleCollection {
 
-        return new StyleCollection(prefix);
+        const collection: StyleCollection = new StyleCollection(prefix);
+        this._collections.set(prefix, collection);
+
+        return collection;
     }
+
+    public static getCollectionMap(): Map<string, StyleCollection> {
+
+        return this._collections;
+    }
+
+    private static readonly _collections: Map<string, StyleCollection> = new Map();
 
     private readonly _prefix: string;
     private readonly _managers: Map<string, StyleManager>;
