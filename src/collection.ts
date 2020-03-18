@@ -22,6 +22,37 @@ export class StyleCollection {
         return this._collections;
     }
 
+    public static getCollections(): StyleCollection[] {
+
+        return [...this._collections.values()];
+    }
+
+    public static renderCombinedString(): string {
+
+        return this.getCollections()
+            .map((collection: StyleCollection) => collection.renderSting())
+            .join('');
+    }
+
+    public static renderCombinedStyleTagString(id: string): string {
+
+        const content: string = this.renderCombinedString();
+        return `<style id="${id}">${content}</style>`;
+    }
+
+    public static flushCombinedStyleTagString(id: string): string {
+
+        const collections: StyleCollection[] = this.getCollections();
+        const strings: string[] = [];
+        for (const collection of collections) {
+            const content: string = collection.renderSting();
+            collection.resetAttachment();
+            strings.push(content);
+        }
+
+        return `<style id="${id}">${strings.join('')}</style>`;
+    }
+
     private static readonly _collections: Map<string, StyleCollection> = new Map();
 
     private readonly _prefix: string;
@@ -71,10 +102,10 @@ export class StyleCollection {
 
     public flushStyleTagSting(id: string): string {
 
-        const content: string = this.renderSting();
+        const result: string = this.renderStyleTagSting(id);
         this.resetAttachment();
 
-        return `<style id="${id}">${content}</style>`;
+        return result;
     }
 
     public resetAttachment(): this {
