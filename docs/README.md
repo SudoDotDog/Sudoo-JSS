@@ -6,3 +6,11 @@
 [![downloads](https://img.shields.io/npm/dm/@sudoo/jss.svg)](https://www.npmjs.com/package/@sudoo/jss)
 
 :beginner: JSS registration wrap
+
+## Install
+
+```sh
+yarn add @sudoo/jss
+# Or
+npm install @sudoo/jss --save
+```
