@@ -14,6 +14,8 @@ export type RegisterOptions = {
 
 export class Register {
 
+    private static _instance: Register;
+
     public static register(options: RegisterOptions = {}): Register {
 
         const instance: Register = this.getInstance();
@@ -43,8 +45,6 @@ export class Register {
 
         return this._instance;
     }
-
-    private static _instance: Register;
 
     private _setupDone: boolean;
     private _initialDone: boolean;
@@ -85,7 +85,7 @@ export class Register {
         return this;
     }
 
-    public removeServerSideStyles() {
+    public removeServerSideStyles(): void {
 
         if (!this._options.serverSideStyleIds) {
             return;

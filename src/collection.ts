@@ -9,6 +9,8 @@ import { StyleManager } from "./style";
 
 export class StyleCollection {
 
+    private static readonly _collections: Map<string, StyleCollection> = new Map();
+
     public static create(prefix: string): StyleCollection {
 
         const collection: StyleCollection = new StyleCollection(prefix);
@@ -52,8 +54,6 @@ export class StyleCollection {
 
         return `<style id="${id}">${strings.join('')}</style>`;
     }
-
-    private static readonly _collections: Map<string, StyleCollection> = new Map();
 
     private readonly _prefix: string;
     private readonly _managers: Map<string, StyleManager>;

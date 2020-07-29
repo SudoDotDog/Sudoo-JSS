@@ -8,7 +8,7 @@ import jss, { Classes, Styles, StyleSheet } from "jss";
 
 export class StyleManager {
 
-    public static create(base: Styles, meta: string, prefix?: string) {
+    public static create(base: Styles, meta: string, prefix?: string): StyleManager {
 
         return new StyleManager(base, meta, prefix);
     }
@@ -73,6 +73,6 @@ export class StyleManager {
             meta: `${this._prefix}${this._meta}`,
         }).attach();
 
-        return this._sheet as StyleSheet<string | number | symbol>;
+        return this._sheet;
     }
 }
