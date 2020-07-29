@@ -2,10 +2,6 @@
   "name": "@sudoo/jss",
   "version": "1.7.1",
   "description": ":beginner: JSS registration wrap",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SudoDotDog/Sudoo-JSS.git"
@@ -25,5 +21,20 @@
     "@sudoo/react-force": "^1.7.3",
     "@sudoo/react-force-dev": "^1.7.3",
     "@sudoo/triforce": "^2.7.9"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "src/**/*.ts"
+    ],
+    "instrument": true,
+    "reporter": [
+      "json",
+      "text-summary"
+    ],
+    "report-dir": "coverage",
+    "sourceMap": true
   }
 }
