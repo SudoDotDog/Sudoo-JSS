@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/SudoDotDog/Sudoo-JSS#readme",
   "dependencies": {
-    "jss": "^10.8.0",
+    "jss": "^10.8.1",
     "jss-preset-default": "^10.8.0"
   },
   "devDependencies": {
